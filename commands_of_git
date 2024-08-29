@@ -1,0 +1,75 @@
+
+git init
+to initailalize the git
+git init
+
+git status
+to check the status of command wheather it is in working stage or staging stage
+git status
+
+git add
+used to commit file
+git add index.txt 
+
+git add .
+used to commit more files at a time
+git add .
+
+git commit –m ‘some message’
+used to add some message to command
+git command –m ‘message’
+
+git log
+used to see the status of message and also see the details of commit message
+git log
+
+git config --global username  name
+used to config the global user name
+git config  --global username krishna
+
+git config --global usermail mail
+used to commit the global usermail
+git config  --global usermail krishna@gmail.com
+
+git config --global --list
+to see the list of global commits
+git config  --global  --list
+
+git restore –staged filename
+used to restore the staged files(staging to working tree)
+git restore –staged index.txt
+
+git checkout (serverno)
+used to check the message or code we have commited
+git checkout s46fshd628656d
+
+git branch branchname
+used to create a branch
+git branch krishna
+
+git checkout branchname
+used to enter into branch
+git checkout krishna
+
+git checkout –b branchname
+used to create and enter into branch at a time
+git checkout –b krishna
+
+git branch
+used to see the current branch
+git branch
+
+git merge branch name
+used to merge the branch
+git merge krishna
+                                                                    Git Hub
+
+
+git remote add origin githublink
+used to add origin from git bash to git hub
+git remote add origin https://github.com/krishnasrinarayana/upskillingsession.git
+
+
+git push –u origin branchname
+used to push the code to github from git bash
+git push –u origin master
