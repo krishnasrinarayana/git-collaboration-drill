@@ -1,0 +1,421 @@
+-----------------------------------------------------DRILL-1--------------------------------------------
+
+
+----------------------------------------------------COMMANDS--------------------------------------------------------------------------
+
+mkdir------creates a file/directory(make a directory)
+cd --------changes from current directory to slected directory
+cd ..------moves to one directory up from current directory
+touch-------creates a files
+rm ---------used to remove the file or directory which is empty
+nano------pops up a editor it write content for file
+mv------------used to rename a file/directory,moves files to directory
+
+
+--------------------------------------------------------END----------------------------------------------------------
+
+
+
+mkdir hello
+--its creates a folder/directory named "hello"
+
+cd hello
+--cd commands navigates into/inside  the folder
+
+mkdir five one
+--it creates 2 folders  called "five" and "one "inside the "hello "folder 
+
+cd five 
+--it navigates insides folder "five"
+
+mkdir six
+--created a folder called "six" inside the folder "five"
+
+cd six
+--it navigates to folder  "six"
+
+touch c.txt
+--creates a text file  called "c" inside the folder "six" 
+
+mkdir seven
+--it creates a folder  "seven" inside the folder "six"
+
+cd seven
+--navigates inside the folder s"even"
+
+touch error.log
+--creates the  ".log" extension files inside the folder "seven"
+
+cd ..
+cd ..
+cd ..
+
+-- navigates out of the folder upto "hello" folder
+
+cd one
+--navigates to the folder one which was created in folder called "hello" which is root folder
+
+touch a.txt
+--it creates a text file  called "a" inside the folder "one"
+
+touch b.txt
+--creates a text file called "b" inside the folder "one"
+
+mkdir two
+--it creates an folder called "two" inside "one" folder
+
+cd two
+--navigates inside into the folder
+
+touch d.txt
+--creates a  text file called "d" in folder two
+
+mkdir three
+--creates a folder "three" inside folder "two"
+
+
+cd three
+--naviges inside the folder "three"
+
+touch e.txt
+--creates a text file called "e" in "three" folder
+
+mkdir four
+--creates a folder "four" inside folder "three"
+
+cd four
+--it navigates inside the folder
+
+touch access.log
+--creates a "log" extension file called "access" inside "four" folder
+
+cd ..
+cd ..
+cd ..
+cd ..
+
+--navigates out from the folder to root folder
+
+rm five/six/seven/error.log     one/two/three/four/access.log
+--this removes .log extension files frrom the folders
+
+nano a.txt
+-adds the content to the file called "a"
+
+rm -r five
+--removes folder "five"
+
+mv one uno
+--renames the foldername from "one" to "uno"
+
+mv uno/a.txt uno/two
+--it moves a.txt from uno to two folder 
+
+
+
+
+
+------------------------------------------------------------------------DRILL2-------------------------------------------------------------------
+
+------------#PIPES
+
+1.Download the contents of "Harry Potter and the Goblet of fire"
+-----downloaded the file in text format
+
+2.Print the first three lines in the book
+-----head -n 3 harry.txt
+
+3.Print the last 10 lines in the book
+----tail -n 10 harry.txt
+
+
+4.How many times do the following words occur in the book?
+        Harry
+        Ron
+        Hermione
+        Dumbledore
+
+
+ ----grep -c -e "Harry" harry.txt
+ ----grep -c -e "Ron" harry.txt
+ ----grep -c -e "Hermione" harry.txt
+ ----grep -c -e "Dumbledore" harry.txt
+
+5.Print lines from 100 through 200 in the book
+----sed -n '100,200p' harry.txt
+
+6.How many unique words are present in the book?
+------tr -cs '[:alnum:]' '[\n*]' < harry.txt| sort | uniq | wc -l
+ 
+
+
+-------------#PROCESSES,PORTS
+
+1.List your browser's process ids (pid) and parent process ids(ppid)
+--------ps -eF | grep chrome
+
+2.Stop the browser application from the command line
+-----killall chrome
+
+3.List the top 3 processes by CPU usage.
+-------top -b -o %CPU | head -n 20 | grep -v "top" | head -n 3
+
+4.List the top 3 processes by memory usage.
+------ps aux --sort=-%mem | head -n 10
+
+5.Start a Python HTTP server on port 8000
+-------python3 -m http.server 8000
+
+6.Open another tab. Stop the process you started in the previous step
+-----kill <PID>
+
+7.Start a Python HTTP server on port 90
+------python3 -m http.server 90
+
+8.display all active connections and the corresponding TCP / UDP ports.
+------netstat -tuln
+
+9.Find the pid of the process that is listening on port 5432
+--------lsof -i :5432
+
+
+
+----------#MANAGING SOFTWARE
+
+1.Install htop,vim and nginx
+----sudo apt update 
+----sudo apt install htop vim nginx
+
+2.uninstall nginx
+---sudo apt remove nginx
+
+----------MISC
+
+1.What's your local IP address?
+---ifconfig
+
+2.find the IP address of google.com
+-----host google.com
+
+3.How to check if Internet is working using CLI?
+----ping -c 4 google.com
+
+4.Where is the node command located? What about code?
+-------which code
+
+
+
+
+
+-------------------------SOME  MORE COMMANDS
+
+    man
+    ----used as mannual to know more about commands
+
+  
+    cd
+    -------change directory
+
+    cd .  
+    -------Stays in the current directory.
+
+    cd .. 
+    -------- Moves up one directory.
+
+    cd ~ 
+    -------- Moves to the home directory.
+
+    cd - 
+    -------- Switches to the previous directory.
+
+    
+    mkdir
+    ------make/create a directory/folder
+
+    mv
+    ---move or rename file/directory
+
+    cp with recursive flag
+    --copy files/folders
+
+    ls with different flags
+    --lists the directory contents
+
+    ls -alh
+
+    ls -l  Detailed list with file permissions, ownership, size, and modification date.
+    ls -a  Lists all files, including hidden files.
+    ls -h  Human-readable file sizes.
+
+    pwd
+    ------shows present working directory
+
+    rm
+    ---removes the file or folders
+
+   
+
+
+
+
+
+
+
+
+
+
+1.Create/Read/Update/Delete/Move files and folders from command line
+
+create file----------touch filename.txt
+create folder--------mkdir foldername
+
+
+
+read file--------cat filename.txt
+
+Update a File-----echo "New content" >> filename.txt
+
+Delete a File------rm filename.txt
+
+Delete a Folder-------rm -r foldername
+
+Move a File-------mv filename.txt newlocation/
+
+Move a Folder------mv foldername newlocation/
+
+2.Check Disk Status
+Check Disk Space------df -h
+Check Disk Usage-----du -sh *
+
+3.Check status of processes, able to extract process ids ( hint: use pipe operator to combine ps, xargs and awk
+
+-----ps aux
+
+Extract Process IDs and Parent Process IDs
+------ps aux | awk '{print $2, $3}'
+
+Getting the Most Senior Parent Process
+-----ps -e -o pid,ppid,cmd | grep '^\s*1 '
+
+4.Change File Permissions
+View Permissions
+
+
+ls -l filename.txt
+
+Change File Permissions (e.g., 755)
+
+
+chmod 755 filename.txt
+
+Change File Ownership
+
+chown user:group filename.txt
+
+Explanation of Numerical Permissions:
+
+    7 = Read (4) + Write (2) + Execute (1) = 111
+    6 = Read (4) + Write (2) = 110
+    5 = Read (4) + Execute (1) = 101
+    4 = Read (4) = 100
+    0 = No permissions = 000
+
+Extract Last X Lines from Files
+Get Last 10 Lines
+
+tail -n 10 filename.txt
+
+Get Word Count for a Particular Word
+Count Occurrences of a Word
+
+grep -o 'word' filename.txt | wc -l
+
+Find a Particular Word
+Search for a Word in a File
+
+grep 'word' filename.txt
+
+Basics of sed and awk
+sed Example (Replace text):
+
+
+sed 's/oldtext/newtext/g' filename.txt
+
+awk Example (Print first column):
+
+awk '{print $1}' filename.txt
+
+Absolute vs. Relative Paths
+Absolute Path
+
+    Definition: The full path from the root directory.
+    Example: /home/user/docs/filename.txt
+
+Relative Path
+
+    Definition: The path relative to the current directory.
+    Example: docs/filename.txt (if you are in /home/user)
+
+Practice Using Absolute and Relative Paths
+Navigate to a Directory Using an Absolute Path
+
+cd /home/user/docs
+
+Navigate to a Directory Using a Relative Path
+
+
+cd docs
+
+Use the find Command
+Find Files by Name
+
+find /path/to/search -name 'filename.txt'
+
+Find Directories by Name
+
+
+find /path/to/search -type d -name 'foldername'
+
+ls Command with Flags
+View Hidden Files
+
+ls -a
+
+Sort by Time
+
+ls -lt
+
+Reverse Sort
+
+ls -r
+
+Human Readable File Sizes
+
+----ls -lh
+
+Combining Flags
+------ls -altrh
+
+Terminal Control Codes
+
+    Ctrl + D: Log out of the current session or end input.
+    Ctrl + C: Terminate the current process.
+    Ctrl + Z: Suspend the current process.
+
+Difference Between Ctrl + C and Ctrl + Z
+
+    Ctrl + C: Immediately stops the process.
+    Ctrl + Z: Suspends the process and sends it to the background.
+
+Using Ctrl + R for Reverse Search
+
+    Press Ctrl + R.
+    Type a search term.
+    Press Ctrl + R repeatedly to cycle through matches.
+    Press Enter to execute the command or Ctrl + C to cancel.
+
+Using Tab Autocompletion
+
+    Start typing a command or file name and press Tab to autocomplete.
+    Press Tab twice to see possible completions.
+
