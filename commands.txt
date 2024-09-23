@@ -419,4 +419,3 @@ Using Tab Autocompletion
     Start typing a command or file name and press Tab to autocomplete.
     Press Tab twice to see possible completions.
 
-These commands and concepts should cover a broad range of common tasks in the Unix-like command line environment. Let me know if you need more details on any of these topics!
